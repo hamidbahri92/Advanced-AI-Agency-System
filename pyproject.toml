@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai_agency"
+version = "0.1.0"
+authors = [
+    {name = "AI Agency Developer", email = "developer@example.com"},
+]
+description = "Advanced AI Agency System with ADK, MCP, and A2A Integration"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "google-adk>=1.0.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.23.2",
+    "pydantic>=2.4.2",
+    "httpx>=0.25.0",
+    "httpx-sse>=0.3.1",
+    "python-jose>=3.3.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.1",
+    "starlette>=0.27.0",
+    "python-multipart>=0.0.6",
+    "websockets>=11.0.3",
+    "anthropic>=0.8.1",
+    "litellm>=0.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.9.1",
+    "isort>=5.12.0",
+    "mypy>=1.5.1",
+    "pytest-cov>=4.1.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
