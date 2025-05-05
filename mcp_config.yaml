@@ -1,0 +1,131 @@
+# MCP server configurations
+filesystem:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-filesystem"
+    - "./data"
+  cache_tools_list: true
+
+fetch:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-fetch"
+  cache_tools_list: true
+
+git:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-git"
+    - "."
+  cache_tools_list: true
+
+github:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-github"
+  env:
+    GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"
+  cache_tools_list: true
+
+postgres:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-postgres"
+  env:
+    POSTGRES_CONNECTION_STRING: "${POSTGRES_URL}"
+  cache_tools_list: true
+
+# Additional MCP servers
+jira:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-jira"
+  env:
+    JIRA_API_TOKEN: "${JIRA_TOKEN}"
+    JIRA_EMAIL: "${JIRA_EMAIL}"
+    JIRA_BASE_URL: "${JIRA_URL}"
+  cache_tools_list: true
+
+slack:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-slack"
+  env:
+    SLACK_BOT_TOKEN: "${SLACK_TOKEN}"
+  cache_tools_list: true
+
+confluence:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-confluence"
+  env:
+    CONFLUENCE_API_TOKEN: "${CONFLUENCE_TOKEN}"
+    CONFLUENCE_EMAIL: "${CONFLUENCE_EMAIL}"
+    CONFLUENCE_BASE_URL: "${CONFLUENCE_URL}"
+  cache_tools_list: true
+
+notion:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-notion"
+  env:
+    NOTION_API_KEY: "${NOTION_KEY}"
+  cache_tools_list: true
+
+vscode:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-vscode"
+  cache_tools_list: true
+
+mongodb:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-mongodb"
+  env:
+    MONGODB_CONNECTION_STRING: "${MONGODB_URL}"
+  cache_tools_list: true
+
+s3:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-s3"
+  env:
+    AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY}"
+    AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_KEY}"
+    AWS_REGION: "${AWS_REGION}"
+  cache_tools_list: true
+
+redis:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@modelcontextprotocol/server-redis"
+  env:
+    REDIS_URL: "${REDIS_URL}"
+  cache_tools_list: true
